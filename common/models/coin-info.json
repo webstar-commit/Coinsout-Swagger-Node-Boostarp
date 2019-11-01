@@ -1,0 +1,23 @@
+{
+  "name": "CoinInfo",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "prices": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "number"
+    },
+    "updateAt": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

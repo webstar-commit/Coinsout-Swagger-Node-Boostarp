@@ -1,0 +1,53 @@
+{
+  "name": "TradesInfo",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "exchange": {
+      "type": "string",
+      "required": true,
+      "default": "symbol"
+    },
+    "symbol": {
+      "type": "string",
+      "required": true
+    },
+    "open": {
+      "type": "number"
+    },
+    "close": {
+      "type": "number"
+    },
+    "high": {
+      "type": "number"
+    },
+    "low": {
+      "type": "number"
+    },
+    "price_buy": {
+      "type": "number"
+    },
+    "price_sell": {
+      "type": "number"
+    },
+    "volume_buy": {
+      "type": "number"
+    },
+    "volume_sell": {
+      "type": "number"
+    },
+    "updateAt": {
+      "type": "number"
+    },
+    "timestamp": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

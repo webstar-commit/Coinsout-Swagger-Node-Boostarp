@@ -1,0 +1,22 @@
+{
+  "name": "FiatCurrency",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "currency": {
+      "type": "string",
+      "required": true
+    },
+    "usd": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

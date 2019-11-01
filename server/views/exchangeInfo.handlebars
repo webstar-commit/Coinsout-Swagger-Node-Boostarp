@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>:: CoinScout ::</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/styles.css" rel="stylesheet">
+        <link href="/css/responsive.css" rel="stylesheet">
+        <link href="/css/chart.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body class="select">
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a href="JavaScript:Void(0);" class="visible-xs pull-left img-circle slideBtn" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                    <a class="navbar-brand" href="/"><img src="/img/logo.png" alt=""></a>
+                </div>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search..." name="">
+                        <div class="input-group-btn">
+                            <button class="btn btn-info" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="JavaScript:Void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EN <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="JavaScript:Void(0);">EN - English</a></li>
+                                <li><a href="JavaScript:Void(0);">DE - Deutsche</a></li>
+                                <li><a href="JavaScript:Void(0);">ES - Español</a></li>
+                                <li><a href="JavaScript:Void(0);">FR - Français</a></li>
+                                <li><a href="JavaScript:Void(0);">HR - Hrvatski</a></li>
+                                <li><a href="JavaScript:Void(0);">IT - Italiano</a></li>
+                                <li><a href="JavaScript:Void(0);">PL - Polskie</a></li>
+                                <li><a href="JavaScript:Void(0);">PT - Português</a></li>
+                                <li><a href="JavaScript:Void(0);">TR - Türk</a></li>
+                                <li><a href="JavaScript:Void(0);">RU - Русский</a></li>
+                                <li><a href="JavaScript:Void(0);">UK - Ukranian</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="JavaScript:Void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/users/login" class="blue">Sign In</a></li>
+                                <li><a href="/users/register" class="blue">Register</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <aside class="main-sidebar row-offcanvas row-offcanvas-left">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="header"><i class="fa fa fa-bar-chart"></i> <span>Price Data</span></li>
+                    <li><a href="top100.html"> <span>Top 100</span></a></li>
+                    <li><a href="fullList.html"> <span>Full List</span></a></li>
+                    <li><a href="/listview"> <span>Coins</span></a></li>
+                    <li><a href="tokens.html"> <span>Tokens</span></a></li>
+                    <li><a href="/screener"> <span>Screener</span></a></li>
+                    <li><a href="/arbitrage"> <span>Arbitrage</span></a></li>
+                    <li class="header"><i class="fa fa fa-info-circle"></i> <span>Resources</span></li>
+                    <li class="active"><a href="/exchanges"><span>Exchanges</span></a></li>
+                    <li><a href="mining.html"><span>Mining</span></a></li>
+                    <li><a href="marginTrading.html"><span>Margin Trading</span></a></li>
+                    <li><a href="ico.html"><span>Ico's</span></a></li>
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content">
+                <div class="row hidden-md hidden-sm hidden-xs external-link">
+                    <div class="col-lg-12">
+                        <div class="alert alert-warning" role="alert">
+                            <span>Instant &amp; secure crypto coin conversion, enter wallet addresses and go</span>
+                            <b><a href="http://coindrop.co" target="_blank">www.coindrop.co <i class="fa fa-external-link"></i></a></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-b-10 search exch-search">
+                    <div class="col-md-12 col-lg-9">
+                        <input type="text" class="form-control" placeholder="Search...">
+                    </div>
+                </div>
+                <div class="priceDetails detailPage">
+                	<div class="well exchangeCard">
+                    	<div class="row exchange">
+                        <div class="col-md-8">
+                        	<div class="exch-company">
+                                <img src="/img/binance.png" alt="">
+                                <div class="label label-success">Exchange</div>
+                            </div>
+                            <div class="price">
+                                <h2><i class="fa fa-area-chart" aria-hidden="true"></i> <strong>Total Tranding Volume 24h:</strong> <span id="volume_24">20,894 BTC/ $10,106,789</span></h2>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="social-btn">
+                                <a href="#" class="btn btn-default">Reddit <i class="fa fa-link" aria-hidden="true"></i></a>
+                                <a href="#" class="btn btn-default">Website <i class="fa fa-link" aria-hidden="true"></i></a>
+                                <a href="#" class="btn btn-default">Facebook <i class="fa fa-link" aria-hidden="true"></i></a>
+                                <a href="#" class="btn btn-default">Github <i class="fa fa-link" aria-hidden="true"></i></a>
+                                <a href="#" class="btn btn-default">Twitter <i class="fa fa-link" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="trade-tabs">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#markets" aria-controls="profile" role="tab" data-toggle="tab">Markets</a></li>
+                                    <li role="presentation"><a href="#social" aria-controls="messages" role="tab" data-toggle="tab">Social</a></li>
+                                    <li role="presentation"><a href="#googleTrend" aria-controls="messages" role="tab" data-toggle="tab">Google Trend</a></li>
+                                    <li role="presentation"><a href="#about" aria-controls="messages" role="tab" data-toggle="tab">About</a></li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="markets">
+                                        <div class="row">
+                                            <div class="col-sm-6 dataTables_wrapper">
+                                                <div class="show-value ">
+                                                  <div class="dataTables_length">
+                                                    <label>Market
+                                                      <select class="form-control" id="select">
+                                                                <option>All</option>
+                                                                <option>Bitcoin</option>
+                                                                <option>Ethereum</option>
+                                                                <option>USD</option>
+                                                            </select>
+                                                     </label>
+                                                  </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-sm-6 text-right recent">
+                                                <p>Last Updated: Recently</p>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered arbitrage" id="market">
+                                                <thead>
+                                                    <tr>
+                                                        <th rowspan="2" class="text-left">Name</th>
+                                                        <th rowspan="2">Code</th>
+                                                        <th rowspan="2">Last</th>
+                                                        <th rowspan="2">Volume</th>
+                                                        <th colspan="4">Price Change</th>
+                                                        <th colspan="4">Volume Change</th>
+                                                        <th rowspan="2">Buyers <br>%</th>
+                                                        <th rowspan="2">Sellers <br>%</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">24hr</th>
+                                                        <th scope="col">1hr</th>
+                                                        <th scope="col">30 min</th>
+                                                        <th scope="col">15 min</th>
+                                                        <th scope="col">24hr</th>
+                                                        <th scope="col">1hr</th>
+                                                        <th scope="col">30 min</th>
+                                                        <th scope="col">15 min</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="social">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <a class="twitter-timeline" data-height="550" href="https://twitter.com/systemseed">Tweets by systemseed</a>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <ul class="bitcoin">
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                Content will come here
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="googleTrend">
+                                        Google Trend content will come here
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="about">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                        <br><br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row adbanner">
+                    <div class="col-md-12 text-center">
+                        <img src="/img/ad.jpg" class="/img-responsive" alt="">
+                    </div>
+                </div>
+            </section>
+            <div class="clearfix">&nbsp;</div>
+            <div class="row footer footerSmall">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/"><img src="/img/footer-logo.png" alt=""></a>
+                    <p>@2017 CoinScout</p>
+                    <ul class="social">
+                        <li> <a href="#"> <i class="fa fa-envelope fa-2x"></i> </a> </li>
+                        <li> <a href="#"> <i class=" fa fa-facebook-square fa-2x"></i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-twitter-square fa-2x"></i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-linkedin-square fa-2x"></i> </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                    <h3> About </h3>
+                    <ul>
+                        <li> <a href="#"> Privacy </a> </li>
+                        <li> <a href="#"> Contact Us </a> </li>
+                        <li> <a href="#"> Terms </a> </li>
+                        <li> <a href="#"> FAQ </a> </li>
+                        <li> <a href="#"> Request Form </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-3 col-sm-6 col-xs-6">
+                    <h3> Business </h3>
+                    <ul>
+                        <li> <a href="#"> Partner with us </a> </li>
+                        <li> <a href="#"> Advertise </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-3 col-sm-6 col-xs-12">
+                    <h3> Services </h3>
+                    <ul>
+                        <li> <a href="#"> Crypto Jobs </a> </li>
+                        <li> <a href="#"> Shop </a> </li>
+                        <li> <a href="#"> News </a> </li>
+                        <li> <a href="#"> Learn </a> </li>
+                        <li> <a href="#"> ICO Info </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-12 col-sm-12 col-xs-12">
+                    <h3> Donate </h3>
+                    <ul>
+                        <li>BTC: <a href="#">15rtjtyjtyjkuylujytjtjt</a> </li>
+                        <li>LTC: <a href="#">15rtjtyjtyjkuylujytjtjt</a> </li>
+                        <li>ETN: <a href="#">15rtjtyjtyjkuylujytjtjt</a> </li>
+                    </ul>
+                    <h3> Sign up for our Newsletter </h3>
+                    <ul>
+                        <li>
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" placeholder="Email Address">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default btn-flat" type="button">Go!</button>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <span class="hide" id="exchange_id">{{exchange_id}}</span>
+
+        <script src="/js/jQuery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+		    <script type="text/javascript" src="/js/dataTables.bootstrap.min.js"></script>
+        <script src="/js/scripts.js"></script>
+        {{!-- <script type="text/javascript" src="http://shieldui.com/shared/components/latest/js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="http://shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script> --}}
+        <script src="/js/responsivetabs.js"></script>
+        <script>
+            $(function() {
+            $('.nav-tabs').responsiveTabs();
+            });
+        </script>
+
+         <script src="/js/select2.min.js"></script>
+         <script>
+         	$('#select').select2();
+         </script>
+         <script src="/js/exchangeinfo.js"></script>
+
+    </body>
+</html>

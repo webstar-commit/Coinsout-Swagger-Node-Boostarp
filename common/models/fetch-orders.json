@@ -1,0 +1,37 @@
+{
+  "name": "FetchOrders",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "exchange": {
+      "type": "string",
+      "required": true
+    },
+    "symbol": {
+      "type": "string",
+      "required": true
+    },
+    "asks": {
+      "type": "string"
+    },
+    "bids": {
+      "type": "string"
+    },
+    "datetime": {
+      "type": "date"
+    },
+    "timestamp": {
+      "type": "number"
+    },
+    "createdAt": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

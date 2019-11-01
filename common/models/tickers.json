@@ -1,0 +1,46 @@
+{
+  "name": "Tickers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "exchange": {
+      "type": "string",
+      "required": true
+    },
+    "symbol": {
+      "type": "string",
+      "required": true
+    },
+    "high": {
+      "type": "number"
+    },
+    "low": {
+      "type": "number"
+    },
+    "baseVol": {
+      "type": "number"
+    },
+    "quoteVol": {
+      "type": "number"
+    },
+    "vwap": {
+      "type": "number"
+    },
+    "average": {
+      "type": "number"
+    },
+    "change": {
+      "type": "number"
+    },
+    "updateAt": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

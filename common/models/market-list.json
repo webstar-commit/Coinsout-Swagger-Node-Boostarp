@@ -1,0 +1,35 @@
+{
+  "name": "MarketList",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "market_id": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "market_cap": {
+      "type": "number"
+    },
+    "circulating_supply": {
+      "type": "number"
+    },
+    "volume_24": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

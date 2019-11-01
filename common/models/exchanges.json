@@ -1,0 +1,72 @@
+{
+  "name": "exchanges",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "exchange_id": {
+      "type": "string",
+      "required": true
+    },
+    "logo": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "last_update": {
+      "type": "date"
+    },
+    "exchange_type": {
+      "type": "string"
+    },
+    "twitter_handle": {
+      "type": "string"
+    },
+    "reddit_msg": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "github": {
+      "type": "string"
+    },
+    "google_trend": {
+      "type": "string"
+    },
+    "about": {
+      "type": "string"
+    },
+    "volume24": {
+      "type": "number"
+    },
+    "pairs": {
+      "type": "number"
+    },
+    "symbols": {
+      "type": "string"
+    },
+    "isFetchTrade": {
+      "type": "string"
+    },
+    "isFetchOrder": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

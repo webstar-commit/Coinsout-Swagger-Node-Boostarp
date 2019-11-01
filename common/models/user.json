@@ -1,0 +1,29 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": true,
+  "restrictResetPasswordTokenScope": false,
+  "emailVerificationRequired": false,
+  "properties": {
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "trending": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>:: CoinScout ::</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/styles.css" rel="stylesheet">
+        <link href="/css/responsive.css" rel="stylesheet">
+        <link href="/css/chart.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a href="JavaScript:Void(0);" class="visible-xs pull-left img-circle slideBtn" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                    <a class="navbar-brand" href="/"><img src="/img/logo.png" alt=""></a>
+                </div>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search..." name="">
+                        <div class="input-group-btn">
+                            <button class="btn btn-info" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="JavaScript:Void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EN <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="JavaScript:Void(0);">EN - English</a></li>
+                                <li><a href="JavaScript:Void(0);">DE - Deutsche</a></li>
+                                <li><a href="JavaScript:Void(0);">ES - Español</a></li>
+                                <li><a href="JavaScript:Void(0);">FR - Français</a></li>
+                                <li><a href="JavaScript:Void(0);">HR - Hrvatski</a></li>
+                                <li><a href="JavaScript:Void(0);">IT - Italiano</a></li>
+                                <li><a href="JavaScript:Void(0);">PL - Polskie</a></li>
+                                <li><a href="JavaScript:Void(0);">PT - Português</a></li>
+                                <li><a href="JavaScript:Void(0);">TR - Türk</a></li>
+                                <li><a href="JavaScript:Void(0);">RU - Русский</a></li>
+                                <li><a href="JavaScript:Void(0);">UK - Ukranian</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="JavaScript:Void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/users/login" class="blue">Sign In</a></li>
+                        		<li><a href="/users/register" class="blue">Register</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <aside class="main-sidebar row-offcanvas row-offcanvas-left">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="header"><i class="fa fa fa-bar-chart"></i> <span>Price Data</span></li>
+                    <li><a href="top100.html"> <span>Top 100</span></a></li>
+                    <li><a href="fullList.html"> <span>Full List</span></a></li>
+                    <li><a href="/listview"> <span>Coins</span></a></li>
+                    <li><a href="tokens.html"> <span>Tokens</span></a></li>
+                    <li><a href="/screener"> <span>Screener</span></a></li>
+                    <li class="active"><a href="/arbitrage"> <span>Arbitrage</span></a></li>
+                    <li class="header"><i class="fa fa fa-info-circle"></i> <span>Resources</span></li>
+                    <li><a href="/exchanges"><span>Exchanges</span></a></li>
+                    <li><a href="mining.html"><span>Mining</span></a></li>
+                    <li><a href="marginTrading.html"><span>Margin Trading</span></a></li>
+                    <li><a href="ico.html"><span>Ico's</span></a></li>
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content">
+                <div class="row hidden-md hidden-sm hidden-xs external-link">
+                    <div class="col-lg-12">
+                        <div class="alert alert-warning" role="alert">
+                            <span>Instant &amp; secure crypto coin conversion, enter wallet addresses and go</span>
+                            <b><a href="http://coindrop.co" target="_blank">www.coindrop.co <i class="fa fa-external-link"></i></a></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="row market-cap">
+                    <div class="col-lg-6 col-md-6 col-sm-8">
+                        <div class="well text-center hidden-sm hidden-xs pull-left">
+                            Total Market Cap<br>
+                            <h4 id="total_market_cap"></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-b-10 search searchSmall">
+                    <div class="col-md-12 col-lg-9">
+                        <input type="text" class="form-control" placeholder="Search...">
+                    </div>
+                </div>
+                <div class="row market marketSmall">
+                    <div class="col-md-7">
+                                    	<h3>Market Arbitrage Table</h3>
+                    </div>
+                    <div class="col-md-2 col-sm-6 marketsOpts">
+
+                            <select class="form-control" id="demoSelect">
+                                        {{!-- <option >Select Markets</option> --}}
+                                        <option value = "USD">USD</option>
+                                        <option value = "EUR">EUR</option>
+                                        <option value = "BTC">BTC</option>
+                                        <option value = "ETH">ETH</option>
+                                    </select>
+
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+
+                            <select class="form-control" id="demoSelect2">
+                                        {{!-- <option>Select Currency</option> --}}
+                                        <option value = "BTC">BTC</option>
+                                        <option value = "ETH">ETH</option>
+                                        <option value = "XRP">XRP</option>
+                                        <option value = "BCH">BCH</option>
+                                        <option value = "NEO">NEO</option>
+                                        <option value = "ADA">ADA</option>
+                                        <option value = "ETH">ETH</option>
+                                        <option value = "EOS">EOS</option>
+                                        <option value = "LTC">LTC</option>
+                                        <option value = "XLM">XLM</option>
+                                    </select>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="arbitrage table table-bordered" id="arbitrage">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="2" colspan="2" class="last-update">Last update: <span class="last_update_time" style="font-weight: bold">11:11:06</span></td>
+                                        <th class="vname e1" exchange="bit-x">bit-x</th>
+                                        <th class="vname e1" exchange="bitfinex">bitfinex</th>
+                                        <th class="vname e1" exchange="bitmex">bitmex</th>
+                                        <th class="vname e1" exchange="bitstamp">bitstamp</th>
+                                        <th class="vname e1" exchange="campbx">campbx</th>
+                                        <th class="vname e1" exchange="cex.io">cex.io</th>
+                                        <th class="vname e1" exchange="coinbase">coinbase</th>
+                                        <th class="vname e1" exchange="exmo">exmo</th>
+                                        <th class="vname e1" exchange="gemini">gemini</th>
+                                        <th class="vname e1" exchange="hitbtc">hitbtc</th>
+                                        <th class="vname e1" exchange="itbit">itbit</th>
+                                        <th class="vname e1" exchange="kraken">kraken</th>
+                                        <th class="vname e1" exchange="localbitcoins">localbitcoins</th>
+                                        <th class="vname e1" exchange="therocktrading">therocktrading</th>
+                                        <th class="vname e1" exchange="wallofcoins">wallofcoins</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="header e1 vprice" exchange="bit-x"><span class="price label label-danger">5679.36</span></th>
+                                        <th class="header e1 vprice" exchange="bitfinex"><span class="price label label-default">5743.10</span></th>
+                                        <th class="header e1 vprice" exchange="bitmex"><span class="price label">5774.60</span></th>
+                                        <th class="header e1 vprice" exchange="bitstamp"><span class="price label label-success">5761.56</span></th>
+                                        <th class="header e1 vprice" exchange="campbx"><span class="price label">4200.00</span></th>
+                                        <th class="header e1 vprice" exchange="cex.io"><span class="price label label-danger">5826.60</span></th>
+                                        <th class="header e1 vprice" exchange="coinbase"><span class="price label label-success">5779.09</span></th>
+                                        <th class="header e1 vprice" exchange="exmo"><span class="price label label-success">5745.00</span></th>
+                                        <th class="header e1 vprice" exchange="gemini"><span class="price label label-danger">5765.99</span></th>
+                                        <th class="header e1 vprice" exchange="hitbtc"><span class="price label label-default">5743.77</span></th>
+                                        <th class="header e1 vprice" exchange="itbit"><span class="price label label-success">5757.43</span></th>
+                                        <th class="header e1 vprice" exchange="kraken"><span class="price label label-danger">5762.00</span></th>
+                                        <th class="header e1 vprice" exchange="localbitcoins"><span class="price label">7775.46</span></th>
+                                        <th class="header e1 vprice therock" exchange="therocktrading"><span class="price label">5740.42</span></th>
+                                        <th class="header e1 vprice" exchange="wallofcoins"><span class="price label">7977.77</span></th>
+                                    </tr>
+                                    <tr>
+                                        <th class="hname e2" exchange="bit-x">bit-x</th>
+                                        <th class="header e2 hprice" exchange="bit-x"><span class="price label label-success">5679.36</span></th>
+                                        <td class="arb bit-x_bit-x disabled" e1="bit-x" e2="bit-x">-</td>
+                                        <td class="arb bit-x_bitfinex success" e1="bitfinex" e2="bit-x">1.12%</td>
+                                        <td class="arb bit-x_bitmex success" e1="bitmex" e2="bit-x">1.68%</td>
+                                        <td class="arb bit-x_bitstamp success" e1="bitstamp" e2="bit-x">1.45%</td>
+                                        <td class="arb bit-x_campbx danger" e1="campbx" e2="bit-x">-26.05%</td>
+                                        <td class="arb bit-x_cex.io success" e1="cex.io" e2="bit-x">2.59%</td>
+                                        <td class="arb bit-x_coinbase success" e1="coinbase" e2="bit-x">1.76%</td>
+                                        <td class="arb bit-x_exmo success" e1="exmo" e2="bit-x">1.16%</td>
+                                        <td class="arb bit-x_gemini success" e1="gemini" e2="bit-x">1.53%</td>
+                                        <td class="arb bit-x_hitbtc success" e1="hitbtc" e2="bit-x">1.13%</td>
+                                        <td class="arb bit-x_itbit success" e1="itbit" e2="bit-x">1.37%</td>
+                                        <td class="arb bit-x_kraken success" e1="kraken" e2="bit-x">1.46%</td>
+                                        <td class="arb bit-x_localbitcoins success" e1="localbitcoins" e2="bit-x">36.91%</td>
+                                        <td class="arb bit-x_therocktrading success" e1="therocktrading" e2="bit-x">1.08%</td>
+                                        <td class="arb bit-x_wallofcoins success" e1="wallofcoins" e2="bit-x">40.47%</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="hname e2" exchange="bitfinex">bitfinex</th>
+                                        <th class="header e2 hprice" exchange="bitfinex"><span class="price label label-default">5743.10</span></th>
+                                        <td class="arb bitfinex_bit-x danger" e1="bit-x" e2="bitfinex">-1.11%</td>
+                                        <td class="arb bitfinex_bitfinex disabled" e1="bitfinex" e2="bitfinex">-</td>
+                                        <td class="arb bitfinex_bitmex" e1="bitmex" e2="bitfinex">0.55%</td>
+                                        <td class="arb bitfinex_bitstamp" e1="bitstamp" e2="bitfinex">0.32%</td>
+                                        <td class="arb bitfinex_campbx danger" e1="campbx" e2="bitfinex">-26.87%</td>
+                                        <td class="arb bitfinex_cex.io success" e1="cex.io" e2="bitfinex">1.45%</td>
+                                        <td class="arb bitfinex_coinbase" e1="coinbase" e2="bitfinex">0.63%</td>
+                                        <td class="arb bitfinex_exmo" e1="exmo" e2="bitfinex">0.03%</td>
+                                        <td class="arb bitfinex_gemini" e1="gemini" e2="bitfinex">0.40%</td>
+                                        <td class="arb bitfinex_hitbtc" e1="hitbtc" e2="bitfinex">0.01%</td>
+                                        <td class="arb bitfinex_itbit" e1="itbit" e2="bitfinex">0.25%</td>
+                                        <td class="arb bitfinex_kraken" e1="kraken" e2="bitfinex">0.33%</td>
+                                        <td class="arb bitfinex_localbitcoins success" e1="localbitcoins" e2="bitfinex">35.39%</td>
+                                        <td class="arb bitfinex_therocktrading" e1="therocktrading" e2="bitfinex">-0.05%</td>
+                                        <td class="arb bitfinex_wallofcoins success" e1="wallofcoins" e2="bitfinex">38.91%</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="hname e2" exchange="bitmex">bitmex</th>
+                                        <th class="header e2 hprice" exchange="bitmex"><span class="price label">5774.60</span></th>
+                                        <td class="arb bitmex_bit-x danger" e1="bit-x" e2="bitmex">-1.65%</td>
+                                        <td class="arb bitmex_bitfinex" e1="bitfinex" e2="bitmex">-0.55%</td>
+                                        <td class="arb bitmex_bitmex disabled" e1="bitmex" e2="bitmex">-</td>
+                                        <td class="arb bitmex_bitstamp" e1="bitstamp" e2="bitmex">-0.23%</td>
+                                        <td class="arb bitmex_campbx danger" e1="campbx" e2="bitmex">-27.27%</td>
+                                        <td class="arb bitmex_cex.io" e1="cex.io" e2="bitmex">0.90%</td>
+                                        <td class="arb bitmex_coinbase" e1="coinbase" e2="bitmex">0.08%</td>
+                                        <td class="arb bitmex_exmo" e1="exmo" e2="bitmex">-0.51%</td>
+                                        <td class="arb bitmex_gemini" e1="gemini" e2="bitmex">-0.15%</td>
+                                        <td class="arb bitmex_hitbtc" e1="hitbtc" e2="bitmex">-0.53%</td>
+                                        <td class="arb bitmex_itbit" e1="itbit" e2="bitmex">-0.30%</td>
+                                        <td class="arb bitmex_kraken" e1="kraken" e2="bitmex">-0.22%</td>
+                                        <td class="arb bitmex_localbitcoins success" e1="localbitcoins" e2="bitmex">34.65%</td>
+                                        <td class="arb bitmex_therocktrading" e1="therocktrading" e2="bitmex">-0.59%</td>
+                                        <td class="arb bitmex_wallofcoins success" e1="wallofcoins" e2="bitmex">38.15%</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="hname e2" exchange="bitstamp">bitstamp</th>
+                                        <th class="header e2 hprice" exchange="bitstamp"><span class="price label label-success">5761.56</span></th>
+                                        <td class="arb bitstamp_bit-x danger" e1="bit-x" e2="bitstamp">-1.43%</td>
+                                        <td class="arb bitstamp_bitfinex" e1="bitfinex" e2="bitstamp">-0.32%</td>
+                                        <td class="arb bitstamp_bitmex" e1="bitmex" e2="bitstamp">0.23%</td>
+                                        <td class="arb bitstamp_bitstamp disabled" e1="bitstamp" e2="bitstamp">-</td>
+                                        <td class="arb bitstamp_campbx danger" e1="campbx" e2="bitstamp">-27.10%</td>
+                                        <td class="arb bitstamp_cex.io success" e1="cex.io" e2="bitstamp">1.13%</td>
+                                        <td class="arb bitstamp_coinbase" e1="coinbase" e2="bitstamp">0.30%</td>
+                                        <td class="arb bitstamp_exmo" e1="exmo" e2="bitstamp">-0.29%</td>
+                                        <td class="arb bitstamp_gemini" e1="gemini" e2="bitstamp">0.08%</td>
+                                        <td class="arb bitstamp_hitbtc" e1="hitbtc" e2="bitstamp">-0.31%</td>
+                                        <td class="arb bitstamp_itbit" e1="itbit" e2="bitstamp">-0.07%</td>
+                                        <td class="arb bitstamp_kraken" e1="kraken" e2="bitstamp">0.01%</td>
+                                        <td class="arb bitstamp_localbitcoins success" e1="localbitcoins" e2="bitstamp">34.95%</td>
+                                        <td class="arb bitstamp_therocktrading" e1="therocktrading" e2="bitstamp">-0.37%</td>
+                                        <td class="arb bitstamp_wallofcoins success" e1="wallofcoins" e2="bitstamp">38.47%</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="hname e2" exchange="campbx">campbx</th>
+                                        <th class="header e2 hprice" exchange="campbx"><span class="price label">4200.00</span></th>
+                                        <td class="arb campbx_bit-x success" e1="bit-x" e2="campbx">35.22%</td>
+                                        <td class="arb campbx_bitfinex success" e1="bitfinex" e2="campbx">36.74%</td>
+                                        <td class="arb campbx_bitmex success" e1="bitmex" e2="campbx">37.49%</td>
+                                        <td class="arb campbx_bitstamp success" e1="bitstamp" e2="campbx">37.18%</td>
+                                        <td class="arb campbx_campbx disabled" e1="campbx" e2="campbx">-</td>
+                                        <td class="arb campbx_cex.io success" e1="cex.io" e2="campbx">38.73%</td>
+                                        <td class="arb campbx_coinbase success" e1="coinbase" e2="campbx">37.60%</td>
+                                        <td class="arb campbx_exmo success" e1="exmo" e2="campbx">36.79%</td>
+                                        <td class="arb campbx_gemini success" e1="gemini" e2="campbx">37.29%</td>
+                                        <td class="arb campbx_hitbtc success" e1="hitbtc" e2="campbx">36.76%</td>
+                                        <td class="arb campbx_itbit success" e1="itbit" e2="campbx">37.08%</td>
+                                        <td class="arb campbx_kraken success" e1="kraken" e2="campbx">37.19%</td>
+                                        <td class="arb campbx_localbitcoins success" e1="localbitcoins" e2="campbx">85.13%</td>
+                                        <td class="arb campbx_therocktrading success" e1="therocktrading" e2="campbx">36.68%</td>
+                                        <td class="arb campbx_wallofcoins success" e1="wallofcoins" e2="campbx">89.95%</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="hname e2" exchange="cex.io">cex.io</th>
+                                        <th class="header e2 hprice" exchange="cex.io"><span class="price label label-success">5826.60</span></th>
+                                        <td class="arb cex.io_bit-x danger" e1="bit-x" e2="cex.io">-2.53%</td>
+                                        <td class="arb cex.io_bitfinex danger" e1="bitfinex" e2="cex.io">-1.43%</td>
+                                        <td class="arb cex.io_bitmex" e1="bitmex" e2="cex.io">-0.89%</td>
+                                        <td class="arb cex.io_bitstamp danger" e1="bitstamp" e2="cex.io">-1.12%</td>
+                                        <td class="arb cex.io_campbx danger" e1="campbx" e2="cex.io">-27.92%</td>
+                                        <td class="arb cex.io_cex.io disabled" e1="cex.io" e2="cex.io">-</td>
+                                        <td class="arb cex.io_coinbase" e1="coinbase" e2="cex.io">-0.82%</td>
+                                        <td class="arb cex.io_exmo danger" e1="exmo" e2="cex.io">-1.40%</td>
+                                        <td class="arb cex.io_gemini danger" e1="gemini" e2="cex.io">-1.04%</td>
+                                        <td class="arb cex.io_hitbtc danger" e1="hitbtc" e2="cex.io">-1.42%</td>
+                                        <td class="arb cex.io_itbit danger" e1="itbit" e2="cex.io">-1.19%</td>
+                                        <td class="arb cex.io_kraken danger" e1="kraken" e2="cex.io">-1.11%</td>
+                                        <td class="arb cex.io_localbitcoins success" e1="localbitcoins" e2="cex.io">33.45%</td>
+                                        <td class="arb cex.io_therocktrading danger" e1="therocktrading" e2="cex.io">-1.48%</td>
+                                        <td class="arb cex.io_wallofcoins success" e1="wallofcoins" e2="cex.io">36.92%</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="hname e2" exchange="coinbase">coinbase</th>
+                                        <th class="header e2 hprice" exchange="coinbase"><span class="price label label-success">5779.09</span></th>
+                                        <td class="arb coinbase_bit-x danger" e1="bit-x" e2="coinbase">-1.73%</td>
+                                        <td class="arb coinbase_bitfinex" e1="bitfinex" e2="coinbase">-0.62%</td>
+                                        <td class="arb coinbase_bitmex" e1="bitmex" e2="coinbase">-0.08%</td>
+                                        <td class="arb coinbase_bitstamp" e1="bitstamp" e2="coinbase">-0.30%</td>
+                                        <td class="arb coinbase_campbx danger" e1="campbx" e2="coinbase">-27.32%</td>
+                                        <td class="arb coinbase_cex.io" e1="cex.io" e2="coinbase">0.82%</td>
+                                        <td class="arb coinbase_coinbase disabled" e1="coinbase" e2="coinbase">-</td>
+                                        <td class="arb coinbase_exmo" e1="exmo" e2="coinbase">-0.59%</td>
+                                        <td class="arb coinbase_gemini" e1="gemini" e2="coinbase">-0.23%</td>
+                                        <td class="arb coinbase_hitbtc" e1="hitbtc" e2="coinbase">-0.61%</td>
+                                        <td class="arb coinbase_itbit" e1="itbit" e2="coinbase">-0.37%</td>
+                                        <td class="arb coinbase_kraken" e1="kraken" e2="coinbase">-0.30%</td>
+                                        <td class="arb coinbase_localbitcoins success" e1="localbitcoins" e2="coinbase">34.54%</td>
+                                        <td class="arb coinbase_therocktrading" e1="therocktrading" e2="coinbase">-0.67%</td>
+                                        <td class="arb coinbase_wallofcoins success" e1="wallofcoins" e2="coinbase">38.05%</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="hname e2" exchange="exmo">exmo</th>
+                                        <th class="header e2 hprice" exchange="exmo"><span class="price label label-success">5745.00</span></th>
+                                        <td class="arb exmo_bit-x danger" e1="bit-x" e2="exmo">-1.14%</td>
+                                        <td class="arb exmo_bitfinex" e1="bitfinex" e2="exmo">-0.03%</td>
+                                        <td class="arb exmo_bitmex" e1="bitmex" e2="exmo">0.52%</td>
+                                        <td class="arb exmo_bitstamp" e1="bitstamp" e2="exmo">0.29%</td>
+                                        <td class="arb exmo_campbx danger" e1="campbx" e2="exmo">-26.89%</td>
+                                        <td class="arb exmo_cex.io success" e1="cex.io" e2="exmo">1.42%</td>
+                                        <td class="arb exmo_coinbase" e1="coinbase" e2="exmo">0.59%</td>
+                                        <td class="arb exmo_exmo disabled" e1="exmo" e2="exmo">-</td>
+                                        <td class="arb exmo_gemini" e1="gemini" e2="exmo">0.37%</td>
+                                        <td class="arb exmo_hitbtc" e1="hitbtc" e2="exmo">-0.02%</td>
+                                        <td class="arb exmo_itbit" e1="itbit" e2="exmo">0.22%</td>
+                                        <td class="arb exmo_kraken" e1="kraken" e2="exmo">0.30%</td>
+                                        <td class="arb exmo_localbitcoins success" e1="localbitcoins" e2="exmo">35.34%</td>
+                                        <td class="arb exmo_therocktrading" e1="therocktrading" e2="exmo">-0.08%</td>
+                                        <td class="arb exmo_wallofcoins success" e1="wallofcoins" e2="exmo">38.86%</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="hname e2" exchange="gemini">gemini</th>
+                                        <th class="header e2 hprice" exchange="gemini"><span class="price label label-success">5765.99</span></th>
+                                        <td class="arb gemini_bit-x danger" e1="bit-x" e2="gemini">-1.50%</td>
+                                        <td class="arb gemini_bitfinex" e1="bitfinex" e2="gemini">-0.40%</td>
+                                        <td class="arb gemini_bitmex" e1="bitmex" e2="gemini">0.15%</td>
+                                        <td class="arb gemini_bitstamp" e1="bitstamp" e2="gemini">-0.08%</td>
+                                        <td class="arb gemini_campbx danger" e1="campbx" e2="gemini">-27.16%</td>
+                                        <td class="arb gemini_cex.io success" e1="cex.io" e2="gemini">1.05%</td>
+                                        <td class="arb gemini_coinbase" e1="coinbase" e2="gemini">0.23%</td>
+                                        <td class="arb gemini_exmo" e1="exmo" e2="gemini">-0.36%</td>
+                                        <td class="arb gemini_gemini disabled" e1="gemini" e2="gemini">-</td>
+                                        <td class="arb gemini_hitbtc" e1="hitbtc" e2="gemini">-0.39%</td>
+                                        <td class="arb gemini_itbit" e1="itbit" e2="gemini">-0.15%</td>
+                                        <td class="arb gemini_kraken" e1="kraken" e2="gemini">-0.07%</td>
+                                        <td class="arb gemini_localbitcoins success" e1="localbitcoins" e2="gemini">34.85%</td>
+                                        <td class="arb gemini_therocktrading" e1="therocktrading" e2="gemini">-0.44%</td>
+                                        <td class="arb gemini_wallofcoins success" e1="wallofcoins" e2="gemini">38.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="hname e2" exchange="hitbtc">hitbtc</th>
+                                        <th class="header e2 hprice" exchange="hitbtc"><span class="price label label-default">5743.77</span></th>
+                                        <td class="arb hitbtc_bit-x danger" e1="bit-x" e2="hitbtc">-1.12%</td>
+                                        <td class="arb hitbtc_bitfinex" e1="bitfinex" e2="hitbtc">-0.01%</td>
+                                        <td class="arb hitbtc_bitmex" e1="bitmex" e2="hitbtc">0.54%</td>
+                                        <td class="arb hitbtc_bitstamp" e1="bitstamp" e2="hitbtc">0.31%</td>
+                                        <td class="arb hitbtc_campbx danger" e1="campbx" e2="hitbtc">-26.88%</td>
+                                        <td class="arb hitbtc_cex.io success" e1="cex.io" e2="hitbtc">1.44%</td>
+                                        <td class="arb hitbtc_coinbase" e1="coinbase" e2="hitbtc">0.61%</td>
+                                        <td class="arb hitbtc_exmo" e1="exmo" e2="hitbtc">0.02%</td>
+                                        <td class="arb hitbtc_gemini" e1="gemini" e2="hitbtc">0.39%</td>
+                                        <td class="arb hitbtc_hitbtc disabled" e1="hitbtc" e2="hitbtc">-</td>
+                                        <td class="arb hitbtc_itbit" e1="itbit" e2="hitbtc">0.24%</td>
+                                        <td class="arb hitbtc_kraken" e1="kraken" e2="hitbtc">0.32%</td>
+                                        <td class="arb hitbtc_localbitcoins success" e1="localbitcoins" e2="hitbtc">35.37%</td>
+                                        <td class="arb hitbtc_therocktrading" e1="therocktrading" e2="hitbtc">-0.06%</td>
+                                        <td class="arb hitbtc_wallofcoins success" e1="wallofcoins" e2="hitbtc">38.89%</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="hname e2" exchange="itbit">itbit</th>
+                                        <th class="header e2 hprice" exchange="itbit"><span class="price label label-danger">5757.43</span></th>
+                                        <td class="arb itbit_bit-x danger" e1="bit-x" e2="itbit">-1.36%</td>
+                                        <td class="arb itbit_bitfinex" e1="bitfinex" e2="itbit">-0.25%</td>
+                                        <td class="arb itbit_bitmex" e1="bitmex" e2="itbit">0.30%</td>
+                                        <td class="arb itbit_bitstamp" e1="bitstamp" e2="itbit">0.07%</td>
+                                        <td class="arb itbit_campbx danger" e1="campbx" e2="itbit">-27.05%</td>
+                                        <td class="arb itbit_cex.io success" e1="cex.io" e2="itbit">1.20%</td>
+                                        <td class="arb itbit_coinbase" e1="coinbase" e2="itbit">0.38%</td>
+                                        <td class="arb itbit_exmo" e1="exmo" e2="itbit">-0.22%</td>
+                                        <td class="arb itbit_gemini" e1="gemini" e2="itbit">0.15%</td>
+                                        <td class="arb itbit_hitbtc" e1="hitbtc" e2="itbit">-0.24%</td>
+                                        <td class="arb itbit_itbit disabled" e1="itbit" e2="itbit">-</td>
+                                        <td class="arb itbit_kraken" e1="kraken" e2="itbit">0.08%</td>
+                                        <td class="arb itbit_localbitcoins success" e1="localbitcoins" e2="itbit">35.05%</td>
+                                        <td class="arb itbit_therocktrading" e1="therocktrading" e2="itbit">-0.30%</td>
+                                        <td class="arb itbit_wallofcoins success" e1="wallofcoins" e2="itbit">38.56%</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="hname e2" exchange="kraken">kraken</th>
+                                        <th class="header e2 hprice" exchange="kraken"><span class="price label label-danger">5762.00</span></th>
+                                        <td class="arb kraken_bit-x danger" e1="bit-x" e2="kraken">-1.43%</td>
+                                        <td class="arb kraken_bitfinex" e1="bitfinex" e2="kraken">-0.33%</td>
+                                        <td class="arb kraken_bitmex" e1="bitmex" e2="kraken">0.22%</td>
+                                        <td class="arb kraken_bitstamp" e1="bitstamp" e2="kraken">-0.01%</td>
+                                        <td class="arb kraken_campbx danger" e1="campbx" e2="kraken">-27.11%</td>
+                                        <td class="arb kraken_cex.io success" e1="cex.io" e2="kraken">1.12%</td>
+                                        <td class="arb kraken_coinbase" e1="coinbase" e2="kraken">0.30%</td>
+                                        <td class="arb kraken_exmo" e1="exmo" e2="kraken">-0.30%</td>
+                                        <td class="arb kraken_gemini" e1="gemini" e2="kraken">0.07%</td>
+                                        <td class="arb kraken_hitbtc" e1="hitbtc" e2="kraken">-0.32%</td>
+                                        <td class="arb kraken_itbit" e1="itbit" e2="kraken">-0.08%</td>
+                                        <td class="arb kraken_kraken disabled" e1="kraken" e2="kraken">-</td>
+                                        <td class="arb kraken_localbitcoins success" e1="localbitcoins" e2="kraken">34.94%</td>
+                                        <td class="arb kraken_therocktrading" e1="therocktrading" e2="kraken">-0.37%</td>
+                                        <td class="arb kraken_wallofcoins success" e1="wallofcoins" e2="kraken">38.45%</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="hname e2" exchange="localbitcoins">localbitcoins</th>
+                                        <th class="header e2 hprice" exchange="localbitcoins"><span class="price label">7775.46</span></th>
+                                        <td class="arb localbitcoins_bit-x danger" e1="bit-x" e2="localbitcoins">-26.96%</td>
+                                        <td class="arb localbitcoins_bitfinex danger" e1="bitfinex" e2="localbitcoins">-26.14%</td>
+                                        <td class="arb localbitcoins_bitmex danger" e1="bitmex" e2="localbitcoins">-25.73%</td>
+                                        <td class="arb localbitcoins_bitstamp danger" e1="bitstamp" e2="localbitcoins">-25.90%</td>
+                                        <td class="arb localbitcoins_campbx danger" e1="campbx" e2="localbitcoins">-45.98%</td>
+                                        <td class="arb localbitcoins_cex.io danger" e1="cex.io" e2="localbitcoins">-25.06%</td>
+                                        <td class="arb localbitcoins_coinbase danger" e1="coinbase" e2="localbitcoins">-25.68%</td>
+                                        <td class="arb localbitcoins_exmo danger" e1="exmo" e2="localbitcoins">-26.11%</td>
+                                        <td class="arb localbitcoins_gemini danger" e1="gemini" e2="localbitcoins">-25.84%</td>
+                                        <td class="arb localbitcoins_hitbtc danger" e1="hitbtc" e2="localbitcoins">-26.13%</td>
+                                        <td class="arb localbitcoins_itbit danger" e1="itbit" e2="localbitcoins">-25.95%</td>
+                                        <td class="arb localbitcoins_kraken danger" e1="kraken" e2="localbitcoins">-25.90%</td>
+                                        <td class="arb localbitcoins_localbitcoins disabled" e1="localbitcoins" e2="localbitcoins">-</td>
+                                        <td class="arb localbitcoins_therocktrading danger" e1="therocktrading" e2="localbitcoins">-26.17%</td>
+                                        <td class="arb localbitcoins_wallofcoins success" e1="wallofcoins" e2="localbitcoins">2.60%</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="hname e2" exchange="therocktrading">therocktrading</th>
+                                        <th class="header e2 hprice" exchange="therocktrading"><span class="price label">5740.42</span></th>
+                                        <td class="arb therocktrading_bit-x danger" e1="bit-x" e2="therocktrading">-1.06%</td>
+                                        <td class="arb therocktrading_bitfinex" e1="bitfinex" e2="therocktrading">0.05%</td>
+                                        <td class="arb therocktrading_bitmex" e1="bitmex" e2="therocktrading">0.60%</td>
+                                        <td class="arb therocktrading_bitstamp" e1="bitstamp" e2="therocktrading">0.37%</td>
+                                        <td class="arb therocktrading_campbx danger" e1="campbx" e2="therocktrading">-26.83%</td>
+                                        <td class="arb therocktrading_cex.io success" e1="cex.io" e2="therocktrading">1.50%</td>
+                                        <td class="arb therocktrading_coinbase" e1="coinbase" e2="therocktrading">0.67%</td>
+                                        <td class="arb therocktrading_exmo" e1="exmo" e2="therocktrading">0.08%</td>
+                                        <td class="arb therocktrading_gemini" e1="gemini" e2="therocktrading">0.45%</td>
+                                        <td class="arb therocktrading_hitbtc" e1="hitbtc" e2="therocktrading">0.06%</td>
+                                        <td class="arb therocktrading_itbit" e1="itbit" e2="therocktrading">0.30%</td>
+                                        <td class="arb therocktrading_kraken" e1="kraken" e2="therocktrading">0.38%</td>
+                                        <td class="arb therocktrading_localbitcoins success" e1="localbitcoins" e2="therocktrading">35.45%</td>
+                                        <td class="arb therocktrading_therocktrading disabled" e1="therocktrading" e2="therocktrading">-</td>
+                                        <td class="arb therocktrading_wallofcoins success" e1="wallofcoins" e2="therocktrading">38.98%</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="hname e2" exchange="wallofcoins">wallofcoins</th>
+                                        <th class="header e2 hprice" exchange="wallofcoins"><span class="price label">7977.77</span></th>
+                                        <td class="arb wallofcoins_bit-x danger" e1="bit-x" e2="wallofcoins">-28.81%</td>
+                                        <td class="arb wallofcoins_bitfinex danger" e1="bitfinex" e2="wallofcoins">-28.01%</td>
+                                        <td class="arb wallofcoins_bitmex danger" e1="bitmex" e2="wallofcoins">-27.62%</td>
+                                        <td class="arb wallofcoins_bitstamp danger" e1="bitstamp" e2="wallofcoins">-27.78%</td>
+                                        <td class="arb wallofcoins_campbx danger" e1="campbx" e2="wallofcoins">-47.35%</td>
+                                        <td class="arb wallofcoins_cex.io danger" e1="cex.io" e2="wallofcoins">-26.96%</td>
+                                        <td class="arb wallofcoins_coinbase danger" e1="coinbase" e2="wallofcoins">-27.56%</td>
+                                        <td class="arb wallofcoins_exmo danger" e1="exmo" e2="wallofcoins">-27.99%</td>
+                                        <td class="arb wallofcoins_gemini danger" e1="gemini" e2="wallofcoins">-27.72%</td>
+                                        <td class="arb wallofcoins_hitbtc danger" e1="hitbtc" e2="wallofcoins">-28.00%</td>
+                                        <td class="arb wallofcoins_itbit danger" e1="itbit" e2="wallofcoins">-27.83%</td>
+                                        <td class="arb wallofcoins_kraken danger" e1="kraken" e2="wallofcoins">-27.77%</td>
+                                        <td class="arb wallofcoins_localbitcoins danger" e1="localbitcoins" e2="wallofcoins">-2.54%</td>
+                                        <td class="arb wallofcoins_therocktrading danger" e1="therocktrading" e2="wallofcoins">-28.04%</td>
+                                        <td class="arb wallofcoins_wallofcoins disabled" e1="wallofcoins" e2="wallofcoins">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="clearfix">&nbsp;</div>
+            <div class="row footer footerSmall">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/"><img src="/img/footer-logo.png" alt=""></a>
+                    <p>@2017 CoinScout</p>
+                    <ul class="social">
+                        <li> <a href="#"> <i class="fa fa-envelope fa-2x"></i> </a> </li>
+                        <li> <a href="#"> <i class=" fa fa-facebook-square fa-2x"></i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-twitter-square fa-2x"></i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-linkedin-square fa-2x"></i> </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                    <h3> About </h3>
+                    <ul>
+                        <li> <a href="#"> Privacy </a> </li>
+                        <li> <a href="#"> Contact Us </a> </li>
+                        <li> <a href="#"> Terms </a> </li>
+                        <li> <a href="#"> FAQ </a> </li>
+                        <li> <a href="#"> Request Form </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-3 col-sm-6 col-xs-6">
+                    <h3> Business </h3>
+                    <ul>
+                        <li> <a href="#"> Partner with us </a> </li>
+                        <li> <a href="#"> Advertise </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-3 col-sm-6 col-xs-12">
+                    <h3> Services </h3>
+                    <ul>
+                        <li> <a href="#"> Crypto Jobs </a> </li>
+                        <li> <a href="#"> Shop </a> </li>
+                        <li> <a href="#"> News </a> </li>
+                        <li> <a href="#"> Learn </a> </li>
+                        <li> <a href="#"> ICO Info </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-12 col-sm-12 col-xs-12">
+                    <h3> Donate </h3>
+                    <ul>
+                        <li>BTC: <a href="#">15rtjtyjtyjkuylujytjtjt</a> </li>
+                        <li>LTC: <a href="#">15rtjtyjtyjkuylujytjtjt</a> </li>
+                        <li>ETN: <a href="#">15rtjtyjtyjkuylujytjtjt</a> </li>
+                    </ul>
+                    <h3> Sign up for our Newsletter </h3>
+                    <ul>
+                        <li>
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" placeholder="Email Address">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default btn-flat" type="button">Go!</button>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="/js/jQuery-2.1.4.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+        <script src="/js/scripts.js"></script>
+        <script src="/js/select2.min.js"></script>
+        <script type="text/javascript">
+		      $('#demoSelect, #demoSelect2').select2();
+		    </script>
+        <script src="/js/arbitrage.js"></script>
+        <script src="/js/socket.io.js"></script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "symbols",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "required": true
+    },
+    "base": {
+      "type": "string"
+    },
+    "quote": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

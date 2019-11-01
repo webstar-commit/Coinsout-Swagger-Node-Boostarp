@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>:: CoinScout ::</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/styles.css" rel="stylesheet">
+        <link href="/css/responsive.css" rel="stylesheet">
+        {{!-- <link href="/css/chart.css" rel="stylesheet"> --}}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+        <link href="/css/nv.d3.min.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a href="JavaScript:Void(0);" class="visible-xs pull-left img-circle slideBtn" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                    <a class="navbar-brand" href="/"><img src="/img/logo.png" alt=""></a>
+                </div>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search..." name="">
+                        <div class="input-group-btn">
+                            <button class="btn btn-info" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="JavaScript:Void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EN <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="JavaScript:Void(0);">EN - English</a></li>
+                                <li><a href="JavaScript:Void(0);">DE - Deutsche</a></li>
+                                <li><a href="JavaScript:Void(0);">ES - Español</a></li>
+                                <li><a href="JavaScript:Void(0);">FR - Français</a></li>
+                                <li><a href="JavaScript:Void(0);">HR - Hrvatski</a></li>
+                                <li><a href="JavaScript:Void(0);">IT - Italiano</a></li>
+                                <li><a href="JavaScript:Void(0);">PL - Polskie</a></li>
+                                <li><a href="JavaScript:Void(0);">PT - Português</a></li>
+                                <li><a href="JavaScript:Void(0);">TR - Türk</a></li>
+                                <li><a href="JavaScript:Void(0);">RU - Русский</a></li>
+                                <li><a href="JavaScript:Void(0);">UK - Ukranian</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="JavaScript:Void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/users/login" class="blue">Sign In</a></li>
+                        		<li><a href="/users/register" class="blue">Register</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <aside class="main-sidebar row-offcanvas row-offcanvas-left">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="header"><i class="fa fa fa-bar-chart"></i> <span>Price Data</span></li>
+                    <li><a href="top100.html"> <span>Top 100</span></a></li>
+                    <li><a href="fullList.html"> <span>Full List</span></a></li>
+                    <li class="active"><a href="/listview"> <span>Coins</span></a></li>
+                    <li><a href="tokens.html"> <span>Tokens</span></a></li>
+                    <li><a href="/screener"> <span>Screener</span></a></li>
+                    <li><a href="/arbitrage"> <span>Arbitrage</span></a></li>
+                    <li class="header"><i class="fa fa fa-info-circle"></i> <span>Resources</span></li>
+                    <li><a href="/exchanges"><span>Exchanges</span></a></li>
+                    <li><a href="mining.html"><span>Mining</span></a></li>
+                    <li><a href="marginTrading.html"><span>Margin Trading</span></a></li>
+                    <li><a href="ico.html"><span>Ico's</span></a></li>
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content">
+                <div class="row hidden-md hidden-sm hidden-xs external-link">
+                    <div class="col-lg-12">
+                        <div class="alert alert-warning" role="alert">
+                            <span>Instant &amp; secure crypto coin conversion, enter wallet addresses and go</span>
+                            <b><a href="http://coindrop.co" target="_blank">www.coindrop.co <i class="fa fa-external-link"></i></a></b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-b-10 search">
+                    <div class="col-md-12 col-lg-9">
+                        <input type="text" class="form-control m-t-55" placeholder="Search...">
+                    </div>
+                </div>
+                <div class="priceDetails detailPage">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-6 rank">
+                                    <div class="well">
+                                        <h3><img src={{coin_icon}} alt="">{{coin_name}}</h3>
+                                        <div class="price">
+                                            <h2 id="coin_price" class="pull-left"></h2>
+                                            <h2><span id="unit"></span></h2>
+                                            <span id="price_diff"></span>
+                                            {{!-- {{{diff_string}}} --}}
+                                            {{!-- <div class="text-bold text-danger">{{diff_value}} ({{diff_percent}}%)
+                                                <em class="fa fa-fw fa-caret-down"></em>
+                                            </div> --}}
+                                        </div>
+                                        <ul>
+                                            <li>{{price_btc}} BTC
+                                                {{{diff_btc_percent}}}</span>
+                                            </li>
+                                            <li>{{price_etc}} ETC
+                                                {{{diff_etc_percent}}}</span>
+                                            </li>
+                                        </ul>
+                                        <div class="rank-btn">
+                                            <span class="label label-success label-block">Rank {{coin_rank}}</span>
+                                            <span class="label label-default label-block">Token</span>
+                                            <a href="/portfolios" class="btn btn-default">+ Add to Portfolio</a>
+                                        </div>
+                                        <div class="sector">
+                                            Sector: <span>Marketplaces</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-sm-6">
+                                    <div class="well Market-value">
+                                        <ul>
+                                            <li class="grey">Market Cap</li>
+                                            <li>{{market_cap_usd}}</li>
+                                            <li>8,859 BTC</li>
+                                            <li>124,451 ETH</li>
+                                        </ul>
+                                        <ul>
+                                            <li class="grey">Volume (24h)</li>
+                                            <li id="24Volume">{{24h_volume_usd}}</li>
+                                            <li>2,859 BTC</li>
+                                            <li>24,451 ETH</li>
+                                        </ul>
+                                        <ul class="supply">
+                                            <li class="grey">Circulation Supply</li>
+                                            <li>{{coin_circul_supply}} {{coin_base_name}}</li>
+                                            <li class="grey">Total Supply</li>
+                                            <li>{{coin_total_supply}}  {{coin_base_name}}</li>
+                                        </ul>
+                                        <ul class="market-percent">
+                                            <li>%1h<br>
+                                                <span class="text-success">{{percent_change_1h}}</span>
+                                            </li>
+                                            <li>%24h<br>
+                                                <span class="text-success">{{percent_change_24h}}</span>
+                                            </li>
+                                            <li>%7d<br>
+                                                <span class="text-danger">{{percent_change_7d}}</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-sm-6">
+                                    <div class="well links">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-link"></i>Website</a></li>
+                                            <li><a href="#"><i class="fa fa-comments-o"></i>Message Board</a></li>
+                                            <li><a href="#"><i class="fa fa-comments-o"></i>Message Board 2</a></li>
+                                            <li><a href="#"><i class="fa fa-bullhorn"></i>Announcement</a></li>
+                                            <li><a href="#"><i class="fa fa-search"></i>Explorer</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="trade-tabs">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#chart" aria-controls="home" role="tab" data-toggle="tab">Chart</a></li>
+                                    <li role="presentation"><a href="#markets" aria-controls="profile" role="tab" data-toggle="tab">Markets</a></li>
+                                    <li role="presentation"><a href="#social" aria-controls="messages" role="tab" data-toggle="tab">Social</a></li>
+                                    <li role="presentation"><a href="#googleTrend" aria-controls="messages" role="tab" data-toggle="tab">Google Trend</a></li>
+                                    <li role="presentation"><a href="#about" aria-controls="messages" role="tab" data-toggle="tab">About</a></li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="chart" style="height: 450px;">
+                                      <ul id="chart_period">
+                                        <li class="btn btn-default btn-sm active" time="15m">15M</li>
+                                        <li class="btn btn-default btn-sm" time="30m">30M</li>
+                                        <li class="btn btn-default btn-sm" time="1h">1H</li>
+                                        <li class="btn btn-default btn-sm" time="4h">4H</li>
+                                        <li class="btn btn-default btn-sm" time="1d">1D</li>
+                                        <li class="btn btn-default btn-sm" time="1w">1W</li>
+                                      </ul>
+                                        {{!-- <svg></svg> --}}
+                                        <iframe id="chartview" src="" style="width:100%; height:100%; border:none;"></iframe>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="markets">
+                                        <div class="table-responsive">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered text-center" id="market">
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="social">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <a class="twitter-timeline" data-height="550" href="https://twitter.com/systemseed">Tweets by systemseed</a>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <ul class="bitcoin">
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">This is How Jamie Dimon Buys Bitcoin</a>
+                                                        <span>2950 points | 130 comments</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                Content will come here
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="googleTrend">
+                                        Google Trend content will come here
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="about">
+                                        About us content will come here
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <div class="trade-btn">
+                                        <a href="#" class="btn btn-info btn-lg">Trade PTOY on BITFINEX <i class="fa fa-external-link"></i></a>
+                                        <a href="#" class="btn btn-info btn-lg">Trade PTOY on POLONIEX <i class="fa fa-external-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="grid-view cardHeight">
+                    <h3 class="projectHeading">Related Crypto Projects</h3>
+                    <div class="well">
+                        <p><img src="/img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="/detailpage" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                    <div class="well">
+                        <p><img src="/img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="/detailpage" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                    <div class="well">
+                        <p><img src="/img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="/detailpage" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                    <div class="well">
+                        <p><img src="/img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="/detailpage" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                    <div class="well">
+                        <p><img src="/img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="/detailpage" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                    <div class="well">
+                        <p><img src="/img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="/detailpage" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row adbanner">
+                    <div class="col-md-12 text-center">
+                        <img src="/img/ad.jpg" class="/img-responsive" alt="">
+                    </div>
+                </div>
+            </section>
+            <div class="clearfix">&nbsp;</div>
+            <div class="row footer footerSmall">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/"><img src="/img/footer-logo.png" alt=""></a>
+                    <p>@2017 CoinScout</p>
+                    <ul class="social">
+                        <li> <a href="#"> <i class="fa fa-envelope fa-2x"></i> </a> </li>
+                        <li> <a href="#"> <i class=" fa fa-facebook-square fa-2x"></i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-twitter-square fa-2x"></i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-linkedin-square fa-2x"></i> </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                    <h3> About </h3>
+                    <ul>
+                        <li> <a href="#"> Privacy </a> </li>
+                        <li> <a href="#"> Contact Us </a> </li>
+                        <li> <a href="#"> Terms </a> </li>
+                        <li> <a href="#"> FAQ </a> </li>
+                        <li> <a href="#"> Request Form </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-3 col-sm-6 col-xs-6">
+                    <h3> Business </h3>
+                    <ul>
+                        <li> <a href="#"> Partner with us </a> </li>
+                        <li> <a href="#"> Advertise </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-3 col-sm-6 col-xs-12">
+                    <h3> Services </h3>
+                    <ul>
+                        <li> <a href="#"> Crypto Jobs </a> </li>
+                        <li> <a href="#"> Shop </a> </li>
+                        <li> <a href="#"> News </a> </li>
+                        <li> <a href="#"> Learn </a> </li>
+                        <li> <a href="#"> ICO Info </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-12 col-sm-12 col-xs-12">
+                    <h3> Donate </h3>
+                    <ul>
+                        <li>BTC: <a href="#">15rtjtyjtyjkuylujytjtjt</a> </li>
+                        <li>LTC: <a href="#">15rtjtyjtyjkuylujytjtjt</a> </li>
+                        <li>ETN: <a href="#">15rtjtyjtyjkuylujytjtjt</a> </li>
+                    </ul>
+                    <h3> Sign up for our Newsletter </h3>
+                    <ul>
+                        <li>
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" placeholder="Email Address">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default btn-flat" type="button">Go!</button>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <span class="hide" id="coin_base_name">{{coin_base_name}}</span>
+        <span class="hide" id="coin_unit">USD</span>
+
+        <script src="/js/jQuery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+        <script type="text/javascript" src="/js/dataTables.bootstrap.min.js"></script>
+        <script src="/js/socket.io.js"></script>
+        <script src="/js/detailpage.js"></script>
+        <script type="text/javascript">
+        </script>
+        <script src="/js/scripts.js"></script>
+        {{!-- <script src="/js/sparkline.js"></script>
+        <script type="text/javascript" src="http://shieldui.com/shared/components/latest/js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="http://shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script> --}}
+        <script src="/js/responsivetabs.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+        <script src="/js/nv.d3.min.js"></script>
+        <script>
+        	$(function() {
+		        $('.nav-tabs').responsiveTabs();
+    			});
+        </script>
+
+    </body>
+</html>

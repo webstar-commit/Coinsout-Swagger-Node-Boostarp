@@ -1,0 +1,51 @@
+{
+  "name": "Profile",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "username": {
+      "type": "string"
+    },
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "birthday": {
+      "type": "string"
+    },
+    "sex": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "lastlogin": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "date"
+    },
+    "lastModifiedAt": {
+      "type": "date"
+    },
+    "trending": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

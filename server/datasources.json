@@ -1,0 +1,41 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "coinscout": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "coinscout",
+    "username": "master",
+    "password": "G1s28vvXa10xmt1oOf",
+    "name": "coinscout",
+    "connector": "mongodb"
+  },
+  "coin-storage": {
+    "name": "coin-storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./storage",
+    "maxFileSize": "10485760"
+  },
+  "emailDs": {
+    "name": "emailDs",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth": {
+          "user": "email@address.com",
+          "pass": "password"
+        }
+      }
+    ]
+  }
+}

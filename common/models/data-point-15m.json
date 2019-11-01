@@ -1,0 +1,53 @@
+{
+  "name": "DataPoint15M",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "required": true
+    },
+    "open": {
+      "type": "number"
+    },
+    "close": {
+      "type": "number"
+    },
+    "high": {
+      "type": "number"
+    },
+    "low": {
+      "type": "number"
+    },
+    "price_buy": {
+      "type": "number"
+    },
+    "price_sell": {
+      "type": "number"
+    },
+    "volume_buy": {
+      "type": "number"
+    },
+    "volume_sell": {
+      "type": "number"
+    },
+    "updateAt": {
+      "type": "number",
+      "required": true
+    },
+    "timestamp": {
+      "type": "date",
+      "required": true
+    },
+    "exchanges": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

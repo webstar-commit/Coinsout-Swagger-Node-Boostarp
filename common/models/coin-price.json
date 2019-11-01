@@ -1,0 +1,30 @@
+{
+  "name": "CoinPrice",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "currency": {
+      "type": "string",
+      "required": true
+    },
+    "btc": {
+      "type": "number"
+    },
+    "etc": {
+      "type": "number"
+    },
+    "percent_change_24h": {
+      "type": "number"
+    },
+    "updateAt": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

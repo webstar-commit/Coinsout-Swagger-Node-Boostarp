@@ -1,0 +1,37 @@
+{
+  "name": "ticket24",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "exchange": {
+      "type": "string",
+      "required": true
+    },
+    "symbol": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "number"
+    },
+    "volume": {
+      "type": "number"
+    },
+    "change": {
+      "type": "number"
+    },
+    "updateAt": {
+      "type": "number"
+    },
+    "timestamp": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

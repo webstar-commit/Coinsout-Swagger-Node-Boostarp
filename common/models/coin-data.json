@@ -1,0 +1,82 @@
+{
+  "name": "CoinData",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "icon": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "base_name": {
+      "type": "string"
+    },
+    "queote": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "default": "Coin"
+    },
+    "live": {
+      "type": "string"
+    },
+    "coin_id": {
+      "type": "string"
+    },
+    "circul_supply": {
+      "type": "number"
+    },
+    "total_supply": {
+      "type": "number"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "reddit": {
+      "type": "string"
+    },
+    "google_trend": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "msg_board": {
+      "type": "string"
+    },
+    "explorer_url": {
+      "type": "string"
+    },
+    "links": {
+      "type": "string"
+    },
+    "about": {
+      "type": "string"
+    },
+    "updated": {
+      "type": "string"
+    },
+    "rank": {
+      "type": "number"
+    },
+    "24h_volume_usd": {
+      "type": "number"
+    },
+    "market_cap_usd": {
+      "type": "number"
+    },
+    "updateAt": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

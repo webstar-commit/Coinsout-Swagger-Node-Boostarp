@@ -1,0 +1,30 @@
+{
+  "name": "ErrorCCXT",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "exchange": {
+      "type": "string"
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "updateAt": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

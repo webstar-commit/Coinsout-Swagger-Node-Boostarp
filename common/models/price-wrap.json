@@ -1,0 +1,38 @@
+{
+  "name": "PriceWrap",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "value": {
+      "type": "number",
+      "required": true
+    },
+    "danger": {
+      "type": "number"
+    },
+    "success": {
+      "type": "number"
+    },
+    "market_cap": {
+      "type": "number"
+    },
+    "circulation": {
+      "type": "number"
+    },
+    "volume": {
+      "type": "number"
+    },
+    "history_chat": {
+      "type": [
+        "number"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

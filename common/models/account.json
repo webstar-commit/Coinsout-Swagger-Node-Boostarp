@@ -1,0 +1,51 @@
+{
+  "name": "Account",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userId": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "birthday": {
+      "type": "string"
+    },
+    "sex": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "lastlogin": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "date"
+    },
+    "lastModifiedAt": {
+      "type": "date"
+    },
+    "trends": {
+      "type": "string",
+      "default": "{}"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

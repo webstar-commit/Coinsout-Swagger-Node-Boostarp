@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>:: CoinScout ::</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/styles.css" rel="stylesheet">
+        <link href="/css/responsive.css" rel="stylesheet">
+        <link href="/css/chart.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body class="index">
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><img src="/img/logo.png" alt=""></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="JavaScript:Void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EN <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="JavaScript:Void(0);">EN - English</a></li>
+                                <li><a href="JavaScript:Void(0);">DE - Deutsche</a></li>
+                                <li><a href="JavaScript:Void(0);">ES - Español</a></li>
+                                <li><a href="JavaScript:Void(0);">FR - Français</a></li>
+                                <li><a href="JavaScript:Void(0);">HR - Hrvatski</a></li>
+                                <li><a href="JavaScript:Void(0);">IT - Italiano</a></li>
+                                <li><a href="JavaScript:Void(0);">PL - Polskie</a></li>
+                                <li><a href="JavaScript:Void(0);">PT - Português</a></li>
+                                <li><a href="JavaScript:Void(0);">TR - Türk</a></li>
+                                <li><a href="JavaScript:Void(0);">RU - Русский</a></li>
+                                <li><a href="JavaScript:Void(0);">UK - Ukranian</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="JavaScript:Void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="/users/login" class="blue">Sign In</a></li>
+                        		  <li><a href="/users/register" class="blue">Register</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="content">
+            <div class="container">
+                <div class="row">
+                	<h3 class="text-center heading">Crypto Asset Ranking & Research for Investors</h3>
+                    <h4 class="text-center heading">Scanning 90+ Exchanges</h4>
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <div class="searchArea">
+                          <form action="/detailpage/" method="get">
+                            <div class="form-group">
+                                <input type="text" class="form-control input-lg coins" name="name" placeholder="Search...">
+                            </div>
+                            <button type="submit" class="btn btn-default">Search Coins</button>
+                            <a href="/top100/" class="btn btn-default">Top 100 Coins</a>
+                          </form>
+                        </div>
+                        <div class="trending">
+                            <h3>Trending Right Now</h3>
+                            <ul>
+                                {{!-- <li><a href="/detailpage?id=BTC"><img src="/img/bitcoin_logo.png" alt=""><br>Bitcoin</a></li>
+                                <li><a href="/detailpage?id=PAT"><img src="/img/patientory.png" alt=""><br>Patientory</a></li>
+                                <li><a href="/detailpage?id=ETH"><img src="/img/ethereum.png" alt=""><br>Ethereum</a></li>
+                                <li><a href="/detailpage?id=DAS"><img src="/img/dash.png" alt=""><br>Dash</a></li>
+                                <li><a href="/detailpage?id=RIP"><img src="/img/ripple.png" alt=""><br>Ripple</a></li>
+                                <li><a href="/detailpage?id=MON"><img src="/img/monero.png" alt=""><br>Monero</a></li>
+                                <li><a href="/detailpage?id=DEC"><img src="/img/decred.png" alt=""><br>Decred</a></li>
+                                <li><a href="/detailpage?id=ZCA"><img src="/img/zcash.png" alt=""><br>Zcash</a></li> --}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="row footer footerLinks">
+            <div class="col-md-3 col-xs-4">
+            	<div class="dropup">
+                  <a class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                    English
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><a href="JavaScript:Void(0);">Korean</a></li>
+                        <li><a href="JavaScript:Void(0);">Chinese</a></li>
+                        <li><a href="JavaScript:Void(0);">Deutsch</a></li>
+                        <li><a href="JavaScript:Void(0);">Spanish</a></li>
+                        <li><a href="JavaScript:Void(0);">French</a></li>
+                        <li><a href="JavaScript:Void(0);">Japanese</a></li>
+                  </ul>
+                </div>
+
+                    </div>
+                <div class="col-md-9 col-xs-8">
+                <ul class="pull-right menu">
+                    <li> <a href="https://hq.coinscout.co"> HQ </a> </li>
+                    <li> <a href="#"> About </a> </li>
+                    <li> <a href="#"> Privacy </a> </li>
+                    <li> <a href="#"> Terms </a> </li>
+                </ul>
+            </div>
+        </div>
+        <script src="/js/jQuery-2.1.4.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+        <script>
+				$(document).ready(function() {
+          $.get( "http://coinscout.eu/api/CoinData", function(coin_data) {
+            const coin_names = [];
+            for (let i = 0; i < coin_data.length; i++) {
+              coin_names.push(coin_data[i].name);
+            }
+            $('input.coins').typeahead({
+              name: 'coins',
+              local: coin_names
+            });
+
+            $.get( "http://coinscout.eu/api/CoinData/topcoins?number=8", function(data) {
+              for (let i = 0; i < data.res.length; i++) {
+                const base_name = data.res[i].base_name;
+                const coin_name = data.res[i].name;
+                const icon = data.res[i].icon ? data.res[i].icon : '';
+                const li = '<li><a href="/detailpage?id=' + base_name + '"><img src="' + icon + '" alt=""><br>' + coin_name + '</a></li>';
+                $('.trending ul').append(li);
+              }
+            });
+
+            /*$('.searchArea button').click(function() {
+              const coin_name = $('.searchArea input.coins').val();
+              if (coin_name) {
+                for (let i = 0; i < coin_names.length; i++) {
+                  if (coin_names[i] === coin_name) {
+                    const url = 'http://coinscout.eu/detailpage?id=' + coin_data[i].coin_id;
+                    $(location).attr('href', url);
+                    break;
+                  }
+                }
+              }
+            })*/
+
+          });
+				});
+        </script>
+        <script src="/js/typeahead.js"></script>
+
+    </body>
+</html>

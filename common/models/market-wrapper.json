@@ -1,0 +1,35 @@
+{
+  "name": "MarketWrapper",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "market": {
+      "type": "number"
+    },
+    "source": {
+      "type": "string"
+    },
+    "pair": {
+      "type": "string"
+    },
+    "volume_24": {
+      "type": "number"
+    },
+    "price": {
+      "type": "number"
+    },
+    "volume_percent": {
+      "type": "string"
+    },
+    "difference": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

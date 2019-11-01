@@ -1,0 +1,28 @@
+{
+  "name": "ArbitrageTable",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "currency": {
+      "type": "string",
+      "required": true
+    },
+    "market": {
+      "type": "string",
+      "required": true
+    },
+    "result": {
+      "type": "string"
+    },
+    "timeStamp": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

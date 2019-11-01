@@ -1,0 +1,36 @@
+{
+  "name": "orders",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "required": true
+    },
+    "exchange": {
+      "type": "string",
+      "required": true
+    },
+    "bid": {
+      "type": "number"
+    },
+    "ask": {
+      "type": "number"
+    },
+    "updateAt": {
+      "type": "number",
+      "required": true
+    },
+    "timestamp": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

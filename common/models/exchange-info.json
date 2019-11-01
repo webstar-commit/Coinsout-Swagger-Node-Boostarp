@@ -1,0 +1,41 @@
+{
+  "name": "exchange_info",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "code": {
+      "type": "string"
+    },
+    "last": {
+      "type": "number"
+    },
+    "volume": {
+      "type": "number"
+    },
+    "price_change": {
+      "type": "object"
+    },
+    "volume_change": {
+      "type": [
+        "number"
+      ]
+    },
+    "buyers": {
+      "type": "number"
+    },
+    "sellers": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

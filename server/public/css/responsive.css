@@ -1,0 +1,419 @@
+@media screen and (min-width: 1600px) {
+    .price-header-fixed .well {
+        padding-right: 10.5% !important;
+        padding-left: 2.6% !important;
+    }
+}
+
+@media screen and (min-width: 1367px) {
+    .grid-view .well {
+        margin: 0 16px 20px 0 !important;
+        width: 265px !important;
+    }
+    .volume span,
+    .percent span {
+        margin-right: 15px;
+    }
+    .sparkLine {
+        width: 113px;
+    }
+    .list-view .well div,
+    .price-header div {
+        margin-right: 1%;
+    }
+    .coinFinder div {
+        width: 150px;
+    }
+    .list-view .name,
+    .price-header .name {
+        width: 17%;
+    }
+    .list-view .circulate,
+    .price-header .circulate {
+        width: 14%;
+    }
+    .price-header-fixed .well {
+        padding-right: 14.5%;
+        padding-left: 4%;
+    }
+    .navbar .navbar-form {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 1295px) {
+    .list-view,
+    .price-header,
+    .view-btn,
+    .adbanner img {
+        display: none;
+    }
+    .grid-view {
+        display: block !important;
+    }
+    .search .col-lg-9 {
+        width: 100% !important;
+    }
+    .currency-symbol .btn {
+        padding: 6px 7px !important;
+    }
+    .market-cap .finder {
+        padding: 20px 20px;
+    }
+	.adbanner .navigation{
+		display:block !important;
+	}
+	
+}
+
+@media screen and (max-width: 1024px) {
+    .tab-content {
+        min-height: inherit;
+    }
+    .cardHeight {
+        height: 750px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .market-cap {
+        margin-bottom: 10px;
+    }
+    .market-cap .finder {
+        padding: 6px 12px;
+        font-size: inherit;
+    }
+    .search {
+        padding: 0px;
+    }
+    .trade-btn .btn {
+        margin-bottom: 10px;
+    }
+    .nav>li>a {
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+    }
+    .datalab br {
+        display: none;
+    }
+    .register .main-sidebar {
+        width: 100%;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 50px !important;
+        border-bottom: solid 1px #e1e4e6;
+        padding: 0px;
+        min-height: inherit;
+    }
+    .register .coming-soon {
+        display: none;
+    }
+    .register .content-wrapper {
+        margin: 0px;
+        padding: 20px;
+    }
+    .register h1 {
+        margin-top: 60px;
+    }
+    .register .main-sidebar .head-logo {
+        left: 20px;
+        top: 5px;
+    }
+    .register .create-account span {
+        display: none;
+    }
+    .register .create-account {
+        right: 20px;
+        top: 13px;
+        z-index: 999;
+    }
+    .social-btn {
+        text-align: left;
+        margin-top: 10px;
+        float: left;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .navbar-form {
+        display: none;
+    }
+    .search .col-md-12 {
+        display: block;
+    }
+    .coinFinder {
+        margin-top: 60px;
+    }
+    .market-cap {
+        margin-top: 50px;
+    }
+    .navbar-header {
+        text-align: center;
+    }
+    .navbar-brand {
+        float: none;
+        line-height: 42px;
+    }
+    .register .navbar-brand {
+        float: left;
+        line-height: 42px;
+    }
+    .register .navbar-header {
+        float: left;
+    }
+    .register .navbar-text {
+        float: right;
+    }
+    .navbar-brand>img {
+        display: inherit;
+    }
+    .navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 700;
+    }
+    .content-wrapper {
+        margin-left: 0px;
+    }
+    .main-sidebar {
+        top: 50px;
+    }
+    .row-offcanvas-left {
+        left: -150px;
+        position: fixed;
+        display: inherit;
+        z-index: 800;
+    }
+    .row-offcanvas-left.active {
+        left: 0px;
+    }
+    .fixed-search {
+        margin: 0px;
+    }
+    .trade-btn .btn {
+        margin-bottom: 10px;
+    }
+    .coinFinder div {
+        width: 135px !important;
+        margin-right: 10px !important;
+        margin-top: 15px !important;
+    }
+    .showMe label {
+        display: none;
+    }
+    .detailPage .well {
+        width: 100% !important;
+    }
+    .navbar-collapse {
+        max-height: 400px;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+    .projectHeading {
+        text-align: center !important;
+    }
+    .datalab .btn {
+        width: 85px;
+    }
+    .lowHigh {
+        margin-top: 52px;
+    }
+    .profile-top-gap {
+        padding-top: 51px;
+    }
+    .exch-search {
+        margin-top: 56px;
+        margin-bottom: 20px;
+    }
+    .grid-view {
+        text-align: center;
+    }
+    .cardHeight {
+        height: 1420px;
+    }
+	.m-t-55{
+		margin-top:55px;
+	}
+	.exchange h2 strong{
+		float:left;
+	}
+	.exchange h2 span{
+		float:left;
+		width:100%;
+	}
+	.exchange h2 i{
+		float:left;
+	}
+	div.dataTables_wrapper div.dataTables_length, div.dataTables_wrapper div.dataTables_filter, div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate{
+		text-align:left;
+	}
+	div.dataTables_wrapper div.dataTables_length select{
+		margin-left:19px;
+		width:152px;
+	}
+	div.dataTables_wrapper div.dataTables_filter input{
+		width:150px;
+	}
+	.recent{
+		text-align:left;
+		padding-left:30px;
+		margin-bottom:20px;
+	}
+	.exchange h2 strong{
+		margin-bottom:8px;
+	}
+	#market_filter{
+		padding-left:15px;
+	}
+	.recent{
+		font-size:12px;
+	}
+	.search.pull-right{
+		float:inherit !important;
+	}
+	#market_info, #market_paginate{
+		text-align:center;
+	}
+	.marketsOpts{
+		margin-bottom:10px;
+	}
+	#market_length{
+		margin-top:20px;
+	}
+	.show-value{
+		padding-left:15px;
+	}
+	div.dataTables_wrapper div.dataTables_length label{
+		width:100%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+    .navbar-inverse .navbar-nav>li>a {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .row-offcanvas {
+        -webkit-transition: all 0.25s ease-out;
+        -moz-transition: all 0.25s ease-out;
+        transition: all 0.25s ease-out;
+    }
+    .sidebar-offcanvas {
+        position: absolute;
+        top: 0;
+        width: 33%;
+        margin-left: 10px;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+        color: #333333;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover,
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus {
+        color: #333333;
+    }
+    .content {
+        padding: 15px;
+    }
+    .footerLinks {
+        margin: 0px;
+    }
+    .detailPage .well {
+        margin-right: 0px;
+    }
+    .detailPage .well.Market-value {
+        width: 100%;
+        height: auto;
+    }
+    .detailPage .Market-value ul li.grey {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .main {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 359px) {
+    .coinFinder div {
+        width: 115px !important;
+    }
+    .datalab .btn {
+        width: 49%;
+    }
+   /* .updateInfo {
+        width: 266px;
+    }*/
+    .referrals.trade-tabs .nav {
+        padding-left: 10px;
+    }
+    .referrals.trade-tabs .nav-tabs>li>a {
+        font-size: 14px;
+    }
+    .footer {
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    
+    .footerLinks ul.menu li a {
+        padding: 0 0 0 6px;
+        font-size: 12px;
+    }
+    .footerLinks .dropup a {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .detailPage .Market-value ul {
+        margin: 0px;
+        width: 100%;
+    }
+    .trending ul li {
+        margin: 5px;
+    }
+    .index {
+        padding-bottom: 70px;
+    }
+    h3.heading {
+        margin-top: 60px;
+        font-size: 21px;
+    }
+    .trending {
+        margin-top: 40px;
+    }
+    h4.heading {
+        font-size: 18px;
+    }
+    .selectCurrecy .text-right {
+        text-align: left;
+    }
+    .selectCurrecy .btn-group {
+        margin-top: 10px;
+    }
+    .marketSmall .form-control {
+        margin-bottom: 10px;
+    }
+    .marketSmall h3 {
+        margin: 15px 0px;
+    }
+    .currency-dropdown {
+        width: 100%;
+    }
+	.grid-view .well {
+        margin-right: 0px !important;
+    }
+	div.dataTables_wrapper div.dataTables_length select{
+		width:100px;
+	}
+	
+}

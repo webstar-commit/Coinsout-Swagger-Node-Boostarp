@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>:: CoinScout ::</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="css/responsive.css" rel="stylesheet">
+        <link href="css/chart.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a href="JavaScript:Void(0);" class="visible-xs pull-left img-circle slideBtn" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt=""></a>
+                </div>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search..." name="">
+                        <div class="input-group-btn">
+                            <button class="btn btn-info" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="JavaScript:Void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EN <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="JavaScript:Void(0);">EN - English</a></li>
+                                <li><a href="JavaScript:Void(0);">DE - Deutsche</a></li>
+                                <li><a href="JavaScript:Void(0);">ES - Español</a></li>
+                                <li><a href="JavaScript:Void(0);">FR - Français</a></li>
+                                <li><a href="JavaScript:Void(0);">HR - Hrvatski</a></li>
+                                <li><a href="JavaScript:Void(0);">IT - Italiano</a></li>
+                                <li><a href="JavaScript:Void(0);">PL - Polskie</a></li>
+                                <li><a href="JavaScript:Void(0);">PT - Português</a></li>
+                                <li><a href="JavaScript:Void(0);">TR - Türk</a></li>
+                                <li><a href="JavaScript:Void(0);">RU - Русский</a></li>
+                                <li><a href="JavaScript:Void(0);">UK - Ukranian</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="JavaScript:Void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="login.html" class="blue">Sign In</a></li>
+                        		<li><a href="register.html" class="blue">Register</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <aside class="main-sidebar row-offcanvas row-offcanvas-left">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="header"><i class="fa fa fa-bar-chart"></i> <span>Price Data</span></li>
+                    <li><a href="top100.html"> <span>Top 100</span></a></li>
+                    <li><a href="fullList.html"> <span>Full List</span></a></li>
+                    <li class="active"><a href="/listview"> <span>Coins</span></a></li>
+                    <li><a href="tokens.html"> <span>Tokens</span></a></li>
+                    <li><a href="/screener"> <span>Screener</span></a></li>
+                    <li><a href="/arbitrage"> <span>Arbitrage</span></a></li>
+                    <li class="header"><i class="fa fa fa-info-circle"></i> <span>Resources</span></li>
+                    <li><a href="/exchanges"><span>Exchanges</span></a></li>
+                    <li><a href="mining.html"><span>Mining</span></a></li>
+                    <li><a href="marginTrading.html"><span>Margin Trading</span></a></li>
+                    <li><a href="ico.html"><span>Ico's</span></a></li>
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content">
+                <div class="row hidden-md hidden-sm hidden-xs external-link">
+                    <div class="col-lg-12">
+                        <div class="alert alert-warning" role="alert">
+                            <span>Instant &amp; secure crypto coin conversion, enter wallet addresses and go</span>
+                            <b><a href="http://coindrop.co" target="_blank">www.coindrop.co <i class="fa fa-external-link"></i></a></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="row market-cap">
+                    <div class="col-lg-6 col-md-6 col-sm-8">
+                        <div class="well text-center hidden-sm hidden-xs pull-left" id="">
+                            Total Market Cap<br>
+                            <h4 id="total_market_cap"></h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-4 text-right">
+                        <div class="currency-symbol hidden-sm hidden-xs">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                More <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="JavaScript:Void(0);" class=" btn_market" market="MUR">MUR</a></li>
+                                    <li><a href="JavaScript:Void(0);" class=" btn_market" market="NZD">NZD</a></li>
+                                    <li><a href="JavaScript:Void(0);" class=" btn_market" market="ERN">ERN</a></li>
+                                    <li><a href="JavaScript:Void(0);" class=" btn_market" market="XAF">XAF</a></li>
+                                </ul>
+                            </div>
+                            <a class="btn btn-default btn_market" href="JavaScript:Void(0);" market="GBP">£ GBP</a>
+                            <a class="btn btn-default btn_market" href="JavaScript:Void(0);" market="AUD">$ AUD</a>
+                            <a class="btn btn-default btn_market" href="JavaScript:Void(0);" market="CNY">¥ CNY</a>
+                            <a class="btn btn-default btn_market" href="JavaScript:Void(0);" market="EUR">€ EUR</a>
+                            <a class="btn btn-default active btn_market" href="JavaScript:Void(0);" market="USD">$ USD</a>
+                        </div>
+                        <div class="currency-dropdown pull-right hidden-md hidden-lg">
+                            <select class="form-control">
+                                <option>$ USD</option>
+                                <option>£ GBP</option>
+                                <option>$ AUD</option>
+                                <option>¥ CNY</option>
+                                <option>€ EUR</option>
+                                <option>£ MUR</option>
+                                <option>$ NZD</option>
+                                <option>¥ XAF</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive well">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered text-center" id="listview">
+                    </table>
+                </div>
+
+                {{!-- <div class="row m-b-10 search">
+                    <div class="col-md-12 col-lg-9">
+                        <input type="text" class="form-control" placeholder="Search...">
+                    </div>
+                    <div class="col-md-4 col-lg-3 text-right view-btn pull-right">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="row hidden-md hidden-sm hidden-xs">
+                    <div class="col-lg-12">
+                        <div class="price-header">
+                            <div class="well blue">
+                                <div class="id">#</div>
+                                <div class="name">Name</div>
+                                <div class="symbol">Symbol</div>
+                                <div class="price">Price <i class="fa fa-sort" aria-hidden="true"></i></div>
+                                <div class="marcap">Market Cap <i class="fa fa-sort" aria-hidden="true"></i></div>
+                                <div class="circulate">Circulating Supply <i class="fa fa-sort" aria-hidden="true"></i></div>
+                                <div class="vol">Volume (24h) <i class="fa fa-sort" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-view listNew">
+                    <a href="detailpage.html">
+                        <div class="well">
+                            <div class="id">5475</div>
+                            <div class="name"><img src="img/bitcoin.png" alt="">Quantum Resistant</div>
+                            <div class="symbol">QRL</div>
+                            <div class="price">
+                                <h2>4800.39 <span>AUD</span></h2>
+                                <div class="text-bold text-danger">$406.80 (-7.81%)
+                                    <em class="fa fa-fw fa-caret-down"></em>
+                                </div>
+                                <span class="sparkLine"></span>
+                            </div>
+                            <div class="marcap">$66,560,738,545
+                            </div>
+                            <div class="circulate">166,560,738,546</div>
+                            <div class="vol">560,003,738,567</div>
+                        </div>
+                    </a>
+                    <a href="detailpage.html">
+                        <div class="well">
+                            <div class="id">5475</div>
+                            <div class="name"><img src="img/bitcoin.png" alt="">Quantum Resistant</div>
+                            <div class="symbol">QRL</div>
+                            <div class="price">
+                                <h2>4800.39 <span>AUD</span></h2>
+                                <div class="text-bold text-danger">$406.80 (-7.81%)
+                                    <em class="fa fa-fw fa-caret-down"></em>
+                                </div>
+                                <span class="sparkLine"></span>
+                            </div>
+                            <div class="marcap">$66,560,738,545
+                            </div>
+                            <div class="circulate">166,560,738,546</div>
+                            <div class="vol">560,003,738,567</div>
+                        </div>
+                    </a>
+                    <a href="detailpage.html">
+                        <div class="well">
+                            <div class="id">5475</div>
+                            <div class="name"><img src="img/bitcoin.png" alt="">Quantum Resistant</div>
+                            <div class="symbol">QRL</div>
+                            <div class="price">
+                                <h2>4800.39 <span>AUD</span></h2>
+                                <div class="text-bold text-danger">$406.80 (-7.81%)
+                                    <em class="fa fa-fw fa-caret-down"></em>
+                                </div>
+                                <span class="sparkLine"></span>
+                            </div>
+                            <div class="marcap">$66,560,738,545
+                            </div>
+                            <div class="circulate">166,560,738,546</div>
+                            <div class="vol">560,003,738,567</div>
+                        </div>
+                    </a>
+                    <a href="detailpage.html">
+                        <div class="well">
+                            <div class="id">5475</div>
+                            <div class="name"><img src="img/bitcoin.png" alt="">Quantum Resistant</div>
+                            <div class="symbol">QRL</div>
+                            <div class="price">
+                                <h2>4800.39 <span>AUD</span></h2>
+                                <div class="text-bold text-danger">$406.80 (-7.81%)
+                                    <em class="fa fa-fw fa-caret-down"></em>
+                                </div>
+                                <span class="sparkLine"></span>
+                            </div>
+                            <div class="marcap">$66,560,738,545
+                            </div>
+                            <div class="circulate">166,560,738,546</div>
+                            <div class="vol">560,003,738,567</div>
+                        </div>
+                    </a>
+                    <a href="detailpage.html">
+                        <div class="well">
+                            <div class="id">5475</div>
+                            <div class="name"><img src="img/bitcoin.png" alt="">Quantum Resistant</div>
+                            <div class="symbol">QRL</div>
+                            <div class="price">
+                                <h2>4800.39 <span>AUD</span></h2>
+                                <div class="text-bold text-danger">$406.80 (-7.81%)
+                                    <em class="fa fa-fw fa-caret-down"></em>
+                                </div>
+                                <span class="sparkLine"></span>
+                            </div>
+                            <div class="marcap">$66,560,738,545
+                            </div>
+                            <div class="circulate">166,560,738,546</div>
+                            <div class="vol">560,003,738,567</div>
+                        </div>
+                    </a>
+                    <a href="detailpage.html">
+                        <div class="well">
+                            <div class="id">5475</div>
+                            <div class="name"><img src="img/bitcoin.png" alt="">Quantum Resistant</div>
+                            <div class="symbol">QRL</div>
+                            <div class="price">
+                                <h2>4800.39 <span>AUD</span></h2>
+                                <div class="text-bold text-danger">$406.80 (-7.81%)
+                                    <em class="fa fa-fw fa-caret-down"></em>
+                                </div>
+                                <span class="sparkLine"></span>
+                            </div>
+                            <div class="marcap">$66,560,738,545
+                            </div>
+                            <div class="circulate">166,560,738,546</div>
+                            <div class="vol">560,003,738,567</div>
+                        </div>
+                    </a>
+                    <a href="detailpage.html">
+                        <div class="well">
+                            <div class="id">5475</div>
+                            <div class="name"><img src="img/bitcoin.png" alt="">Quantum Resistant</div>
+                            <div class="symbol">QRL</div>
+                            <div class="price">
+                                <h2>4800.39 <span>AUD</span></h2>
+                                <div class="text-bold text-danger">$406.80 (-7.81%)
+                                    <em class="fa fa-fw fa-caret-down"></em>
+                                </div>
+                                <span class="sparkLine"></span>
+                            </div>
+                            <div class="marcap">$66,560,738,545
+                            </div>
+                            <div class="circulate">166,560,738,546</div>
+                            <div class="vol">560,003,738,567</div>
+                        </div>
+                    </a>
+                    <a href="detailpage.html">
+                        <div class="well">
+                            <div class="id">5475</div>
+                            <div class="name"><img src="img/bitcoin.png" alt="">Quantum Resistant</div>
+                            <div class="symbol">QRL</div>
+                            <div class="price">
+                                <h2>4800.39 <span>AUD</span></h2>
+                                <div class="text-bold text-danger">$406.80 (-7.81%)
+                                    <em class="fa fa-fw fa-caret-down"></em>
+                                </div>
+                                <span class="sparkLine"></span>
+                            </div>
+                            <div class="marcap">$66,560,738,545
+                            </div>
+                            <div class="circulate">166,560,738,546</div>
+                            <div class="vol">560,003,738,567</div>
+                        </div>
+                    </a>
+                    <a href="detailpage.html">
+                        <div class="well">
+                            <div class="id">5475</div>
+                            <div class="name"><img src="img/bitcoin.png" alt="">Quantum Resistant</div>
+                            <div class="symbol">QRL</div>
+                            <div class="price">
+                                <h2>4800.39 <span>AUD</span></h2>
+                                <div class="text-bold text-danger">$406.80 (-7.81%)
+                                    <em class="fa fa-fw fa-caret-down"></em>
+                                </div>
+                                <span class="sparkLine"></span>
+                            </div>
+                            <div class="marcap">$66,560,738,545
+                            </div>
+                            <div class="circulate">166,560,738,546</div>
+                            <div class="vol">560,003,738,567</div>
+                        </div>
+                    </a>
+                    <a href="detailpage.html">
+                        <div class="well">
+                            <div class="id">5475</div>
+                            <div class="name"><img src="img/bitcoin.png" alt="">Quantum Resistant</div>
+                            <div class="symbol">QRL</div>
+                            <div class="price">
+                                <h2>4800.39 <span>AUD</span></h2>
+                                <div class="text-bold text-danger">$406.80 (-7.81%)
+                                    <em class="fa fa-fw fa-caret-down"></em>
+                                </div>
+                                <span class="sparkLine"></span>
+                            </div>
+                            <div class="marcap">$66,560,738,545
+                            </div>
+                            <div class="circulate">166,560,738,546</div>
+                            <div class="vol">560,003,738,567</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-view hide">
+                    <div class="well">
+                        <p><img src="img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="detailpage.html" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                    <div class="well">
+                        <p><img src="img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="detailpage.html" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                    <div class="well">
+                        <p><img src="img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="detailpage.html" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                    <div class="well">
+                        <p><img src="img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="detailpage.html" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                    <div class="well">
+                        <p><img src="img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="detailpage.html" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                    <div class="well">
+                        <p><img src="img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="detailpage.html" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                    <div class="well">
+                        <p><img src="img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="detailpage.html" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                    <div class="well">
+                        <p><img src="img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="detailpage.html" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                    <div class="well">
+                        <p><img src="img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="detailpage.html" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                    <div class="well">
+                        <p><img src="img/bitcoin.png" alt="">Quantum Resistant</p>
+                        <div class="priceWrap">
+                            <h2>4800.39 <span>AUD</span></h2>
+                            <div class="text-bold text-danger">
+                                $406.80 (-7.81%)
+                            </div>
+                            <span class="label label-success">7383</span>
+                        </div>
+                        <ul>
+                            <li>Market Cap <span>$66,560,003,738</span></li>
+                            <li>Circulation <span>166,560,003,738</span></li>
+                            <li>Volume (24h) <span>560,003,738</span></li>
+                        </ul>
+                        <div class="sparkLine"></div>
+                        <a href="detailpage.html" class="btn btn-default btn-block"> View More </a>
+                    </div>
+                </div> --}}
+                <div class="clearfix"></div>
+                <div class="row adbanner">
+                    <div class="col-md-12 text-center">
+                        <img src="img/ad.jpg" class="img-responsive" alt="">
+                        <div class="pull-right search p-l-r">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="clearfix">&nbsp;</div>
+            <div class="row footer footerSmall">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="index.html"><img src="img/footer-logo.png" alt=""></a>
+                    <p>@2017 CoinScout</p>
+                    <ul class="social">
+                        <li> <a href="#"> <i class="fa fa-envelope fa-2x"></i> </a> </li>
+                        <li> <a href="#"> <i class=" fa fa-facebook-square fa-2x"></i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-twitter-square fa-2x"></i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-linkedin-square fa-2x"></i> </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                    <h3> About </h3>
+                    <ul>
+                        <li> <a href="#"> Privacy </a> </li>
+                        <li> <a href="#"> Contact Us </a> </li>
+                        <li> <a href="#"> Terms </a> </li>
+                        <li> <a href="#"> FAQ </a> </li>
+                        <li> <a href="#"> Request Form </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-3 col-sm-6 col-xs-6">
+                    <h3> Business </h3>
+                    <ul>
+                        <li> <a href="#"> Partner with us </a> </li>
+                        <li> <a href="#"> Advertise </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-3 col-sm-6 col-xs-12">
+                    <h3> Services </h3>
+                    <ul>
+                        <li> <a href="#"> Crypto Jobs </a> </li>
+                        <li> <a href="#"> Shop </a> </li>
+                        <li> <a href="#"> News </a> </li>
+                        <li> <a href="#"> Learn </a> </li>
+                        <li> <a href="#"> ICO Info </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-12 col-sm-12 col-xs-12">
+                    <h3> Donate </h3>
+                    <ul>
+                        <li>BTC: <a href="#">15rtjtyjtyjkuylujytjtjt</a> </li>
+                        <li>LTC: <a href="#">15rtjtyjtyjkuylujytjtjt</a> </li>
+                        <li>ETN: <a href="#">15rtjtyjtyjkuylujytjtjt</a> </li>
+                    </ul>
+                    <h3> Sign up for our Newsletter </h3>
+                    <ul>
+                        <li>
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" placeholder="Email Address">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default btn-flat" type="button">Go!</button>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="js/jQuery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="/js/dataTables.bootstrap.min.js"></script>
+        <script src="js/scripts.js"></script>
+        {{!-- <script src="js/sparkline.js"></script> --}}
+        <script src="js/listview.js"></script>
+        {{!-- <script type="text/javascript" src="http://shieldui.com/shared/components/latest/js/jquery-1.11.1.min.js"></script>
+    	<script type="text/javascript" src="http://shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script> --}}
+    </body>
+</html>

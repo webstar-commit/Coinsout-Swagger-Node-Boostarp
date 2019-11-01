@@ -1,0 +1,28 @@
+{
+  "name": "CoinMarketCap",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "basename": {
+      "type": "string",
+      "required": true
+    },
+    "marketcap": {
+      "type": "number",
+      "default": 0
+    },
+    "updateAt": {
+      "type": "date"
+    },
+    "timestamp": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

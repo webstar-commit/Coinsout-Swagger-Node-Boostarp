@@ -1,0 +1,167 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "coinscout",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "coinscout",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "coinscout",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "coinscout",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "coinscout",
+    "public": false
+  },
+  "Email": {
+    "dataSource": "emailDs"
+  },
+  "user": {
+    "dataSource": "coinscout",
+    "public": true,
+    "options": {}
+  },
+  "Account": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "Profile": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "ArbitrageTable": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "exchange_info": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "exchanges": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "PriceWrap": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "MarketWrapper": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "MarketList": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "CoinInfo": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "CoinData": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "Tickers": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "FetchTrades": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "CoinPrice": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "symbols": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "container": {
+    "dataSource": "coin-storage",
+    "public": true
+  },
+  "orders": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "TradesInfo": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "DataPointDay": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "DataPoint15M": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "DataPoint30M": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "DataPoint1H": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "DataPoint4H": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "DataPoint1D": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "DataPoint1W": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "FiatCurrency": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "ticket24": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "CoinMarketCap": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "ErrorCCXT": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "FetchOrders": {
+    "dataSource": "coinscout",
+    "public": true
+  },
+  "error": {
+    "dataSource": "coinscout",
+    "public": true
+  }
+}
