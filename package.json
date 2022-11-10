@@ -30,7 +30,7 @@
     "loopback-datasource-juggler": "^2.39.0",
     "request": "^2.83.0",
     "serve-favicon": "^2.0.1",
-    "socket.io": "^2.0.4",
+    "socket.io": "^2.5.0",
     "strong-error-handler": "^2.0.0"
   },
   "devDependencies": {
